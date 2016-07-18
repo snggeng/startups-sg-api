@@ -60,7 +60,7 @@ var data = [
     ]
   },
   {
-    'model': 'Investors',
+    'model': 'Incubator_Accelerator',
     'documents': [
       {
         'name': 'Clearbridge Accelerator Pte Ltd',
@@ -68,7 +68,7 @@ var data = [
         'website': 'http://www.clearbridgeaccelerator.com/',
         'description': 'Clearbridge Accelerator invests mainly in healthcare, infosecurity and technology companies. Its team consists of serial entrepreneurs with experience in key markets such as the US, China, Japan and Australia. Via a public-private partnership with the Singapore Government, Clearbridge Accelerator manages both a S$40 million (about US$32 million) fund to invest in life science companies, and an incubator scheme that invests up to S$1 million (about US$0.8 million) for seed-stage companies with a heavy focus on Asia.',
         'logo': '',
-        'type': 'Incubator/Accelerator'
+        'type': ['Incubator/Accelerator']
       },
       {
         'name': 'Joyful Frog Digital Innovation (JFDI)',
@@ -76,7 +76,7 @@ var data = [
         'website': 'http://www.jfdi.asia/',
         'description': 'One of the stalwarts of the Singapore scene, JFDI offers programmes for business startups and professionals. Its partners are grassroots organisations, governments and top corporations. Its practical work is underpinned by close relationships with the world’s leading academic institutions and independent thinkers.',
         'logo': '',
-        'type': 'Incubator/Accelerator'
+        'type': ['Incubator/Accelerator']
       },
       {
         'name': 'muru-D',
@@ -84,7 +84,7 @@ var data = [
         'website': 'https://muru-d.com/',
         'description': "muru-D is the start-up accelerator backed by Telstra. They are looking to support the very best digital talent the Australasian region has to offer. Their goal is to help Australia become a center of digital business by providing mentoring, tailored acceleration services and investment to early stage startups.\nMuru-D will provide you with a cash contribution of $40,000 in return for a small 6% stake in your company. You get a lot more than just a $40k cash investment. You’ll also get 'money-can’t-buy' access to experts within the Telstra family, and to some of their key partners. Support will also be available from Telstra's professional services teams. They'll be able to help you with legals, finance, human resources, and the other issues you'll need to deal with as your idea comes to life.",
         'logo': '',
-        'type': 'Incubator/Accelerator'
+        'type': ['Incubator/Accelerator']
       },
       {
         'name': 'Plug and Play Singapore',
@@ -100,7 +100,7 @@ var data = [
         'website': 'http://www.startupbootcamp.org/accelerator/fintech-singapore.html',
         'description': 'Startupbootcamp FinTech is the leading accelerator focused on financial innovation. We provide funding, mentorship, office space in Singapore and access to a global network of corporate partners, mentors, investors and VCs, for up to 10 selected FinTech startups across the globe.\nFor over three months, the selected startups collaborate with 400+ mentors, partners, and investors to build world class FinTech products, with the ultimate goal of becoming industry leading companies.',
         'logo': '',
-        'type': 'Incubator/Accelerator'
+        'type': ['Incubator/Accelerator']
       },
       {
         'name': '3VS1',
@@ -108,15 +108,20 @@ var data = [
         'website': 'http://www.3vs1.com/',
         'description': '3V SourceOne Capital is an Asian private equity firm with offices in Singapore and Silicon Valley. We invest in high growth companies with the aim of helping management teams reach their full potential. We are a fast growing investment house ourselves and we have learned firsthand about the value of hard work, dedication and pursuing a dream.\nWe are a pioneer in growth capital and private equity in Singapore with an experienced investment team that has contributed to local industry development.',
         'logo': '',
-        'type': 'Investor'
-      },
+        'type': ['Investor']
+      }
+    ]
+  },
+  {
+    'model': 'Investor',
+    'documents': [
       {
         'name': 'ACP',
         'address': '',
         'website': 'http://www.acpven.com/',
         'description': 'ACP is a global investment advisory firm founded by experienced entrepreneurs and seasoned investors. As an alternative asset management company, we are trusted partners of some of the most respected family, corporate and institutional investors in the world.\nACPs investment thesis derives from a worldview that massive innovations in technology, demographic shifts and closer integration of global economies are fundamentally transforming the way we live, work and play.\nIn general, we invest in companies that address a need rather than a want. Our businesses have strong technology moats around them and often have significant product, customer or revenue traction when they engage with us. Most of our companies are lead by experienced founders who often have years if not decades of prior experience.\nACP typically invests in the early growth, or pre-A round and supports companies through multiple follow-on rounds. Our typical investment range is between $200K and $4m and we generally prefer to lead the round. We often invest alongside strategically valuable investors and take board seats where helpful to the company',
         'logo': '',
-        'type': 'Investor'
+        'type': ['Investor']
       },
       {
         'name': 'BAF Spectrum',
@@ -124,7 +129,7 @@ var data = [
         'website': 'http://www.bafspectrum.com/',
         'description': 'BAF Spectrum is a business angel fund focused on Asia-based, early stage technology startups – in particular within digital media, internet and mobile consumer portals as well as R&D-intensive information technology in general.',
         'logo': '',
-        'type': 'Investor'
+        'type': ['Investor']
       },
       {
         'name': 'BlueHill Asset Management',
@@ -132,7 +137,7 @@ var data = [
         'website': 'http://www.bluehill.com.sg/',
         'description': 'BlueHill Asset Management specialises in venture capital and private equity investments across strategic global markets. Based in Singapore, the management has been instrumental in raising funds of approximately S$470 million over the last 4 years.',
         'logo': '',
-        'type': 'Investor'
+        'type': ['Investor']
       },
       {
         'name': 'CAP Vista',
@@ -140,7 +145,7 @@ var data = [
         'website': 'http://www.capvista.com.sg/',
         'description': 'Cap Vista is the strategic investment arm of Defence Science and Technology Agency (DSTA), a statutory board of the Singapore Ministry of Defence.\nCap Vista invests in companies with innovative technologies that can serve the defence and security needs of Singapore.\nCap Vista aims to be the strategic investor of choice for young companies seeking to develop their businesses in the Asian defence and security market.',
         'logo': '',
-        'type': 'Investor'
+        'type': ['Investor']
       }
     ]
   },
@@ -153,7 +158,7 @@ var data = [
         'website': 'http://angelhack.com/angelhack-singapore-2016/',
         'description': 'AngelHack, a female-owned, female-majority company, is the world’s largest and most diverse global hacker community, helping to drive open innovation of tech products, platforms and brands with extraordinary smarts, scale and speed.\nKnown as pioneers of global hackathons for more than four years, AngelHack’s more than 97,000 developers, designers, and entrepreneurs compete to build, test and launch new solutions over the course of a weekend.',
         'logo': '',
-        'type': 'Hackathon',
+        'type': ['Hackathon'],
         'date': ''
       },
       {
