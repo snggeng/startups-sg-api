@@ -58,7 +58,7 @@ function destroyCoSpace (req, res) {
   let id = req.params.id
 
   CoSpace.remove({_id: id}, (err) => {
-    if (err) res.json({message: 'could not delete post b/c: ' + err})
+    if (err) return res.json({message: 'could not delete post b/c: ' + err})
     res.json({message: 'cospace successfully deleted'})
   })
 }
