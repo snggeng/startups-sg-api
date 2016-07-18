@@ -3,9 +3,9 @@ const expect = require('chai').expect
 const supertest = require('supertest')
 const app = require('../app')
 const api = supertest('http://localhost:3000')
-const CoSpace = require('../models/cospace')
+const Event = require('../models/event')
 
-// GET /co-working-spaces
+// GET /events
 //   ✓ should return a 200 response
 //   ✓ should return an array
 //   ✓ should return all the records in the database
@@ -18,15 +18,15 @@ describe('GET /', () => {
   })
 })
 
-describe('GET /co-working-spaces', function () {
+describe('GET /events', function () {
   this.timeout(10000)
   it('should return a 200 response', (done) => {
-    api.get('/co-working-spaces')
+    api.get('/events')
     .set('Accept', 'application/json')
     .expect(200, done)
   })
   it('should return an array', (done) => {
-    api.get('/co-working-spaces')
+    api.get('/events')
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
@@ -35,7 +35,7 @@ describe('GET /co-working-spaces', function () {
     })
   })
   it('should return an object that has a field called "name"', (done) => {
-    api.get('/co-working-spaces')
+    api.get('/events')
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
@@ -44,50 +44,50 @@ describe('GET /co-working-spaces', function () {
     })
   })
   it('should return all the records in the database', (done) => {
-    api.get('/co-working-spaces')
+    api.get('/events')
       .set('Accept', 'application/json')
       .end((error, response) => {
         expect(error).to.be.a('null')
-        expect(response.body).to.have.lengthOf(5)
+        expect(response.body).to.have.lengthOf(10)
         done()
       })
   })
 })
 
-// POST /co-working-spaces
+// POST /events
 //   ✓ should return a 200 response
-//   ✓ should add a new co-working-space to the database
+//   ✓ should add a new event to the database
 
-describe('POST /co-working-spaces', function () {
+describe('POST /events', function () {
   this.timeout(10000)
   it('should return a 200 response', (done) => {
-    api.get('/co-working-spaces')
+    api.get('/events')
     .set('Accept', 'application/json')
     .expect(200, done)
   })
-  it('should add a co-working-space object to the collection', (done) => {
-    api.get('/co-working-spaces')
+  it('should add a event object to the collection', (done) => {
+    api.get('/events')
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
-      expect(response.body[response.body.length - 1].name).to.equal('The Working Capitol')
+      expect(response.body[response.body.length - 1].name).to.equal('Casual Connect')
       done()
     })
   })
 })
 
-// GET /co-working-spaces/:id
+// GET /events/:id
 //   ✓ should return a 200 response
 //   ✓ should return an object containing the fields "name" and "address"
 
-describe('GET /co-working-spaces/:id', function () {
+describe('GET /events/:id', function () {
   this.timeout(10000)
   var id
   before((done) => {
-    api.post('/co-working-spaces')
+    api.post('/events')
       .set('Accept', 'application/json')
       .send({
-        'name': 'test offices',
+        'name': 'test event',
         'address': '122234',
         'description': 'this is a test',
         'website': 'test.com',
@@ -99,46 +99,46 @@ describe('GET /co-working-spaces/:id', function () {
       })
   })
   it('should return a 200 response', (done) => {
-    api.get('/co-working-spaces/' + id)
+    api.get('/events/' + id)
     .set('Accept', 'application/json')
     .expect(200, done)
   })
   it('should return an object that has the fields "name" and "address"', (done) => {
-    api.get('/co-working-spaces/' + id)
+    api.get('/events/' + id)
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
-      expect(response.body.cospace).to.have.property('name')
-      expect(response.body.cospace).to.have.property('address')
+      expect(response.body.event).to.have.property('name')
+      expect(response.body.event).to.have.property('address')
       done()
     })
   })
   after((done) => {
-    api.delete('/co-working-spaces/' + id)
+    api.delete('/events/' + id)
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(err).to.be.a('null')
-        CoSpace.findById({_id: id}, function (err, cospace) {
+        Event.findById({_id: id}, function (err, event) {
           expect(err).to.be.a('null')
-          expect(cospace).to.be.a('null')
+          expect(event).to.be.a('null')
           done()
         })
       })
   })
 })
 
-// PUT /co-working-spaces/:id
+// PUT /events/:id
 //   ✓ should return a 200 response
-//   ✓ should update a co-working-space document
+//   ✓ should update a event document
 
-describe('PUT /co-working-spaces/:id', function () {
+describe('PUT /events/:id', function () {
   this.timeout(10000)
   var id
   before((done) => {
-    api.post('/co-working-spaces')
+    api.post('/events')
       .set('Accept', 'application/json')
       .send({
-        'name': 'test offices',
+        'name': 'test event',
         'address': '122234',
         'description': 'this is a test',
         'website': 'test.com',
@@ -150,46 +150,46 @@ describe('PUT /co-working-spaces/:id', function () {
       })
   })
   it('should return a 200 response', (done) => {
-    api.put('/co-working-spaces/' + id)
+    api.put('/events/' + id)
     .set('Accept', 'application/json')
     .send({
       'address': '1 Good Evening Street, Singapore'
     })
     .expect(200, done)
   })
-  it('should update a co-working-space document', (done) => {
-    api.get('/co-working-spaces/' + id)
+  it('should update a event document', (done) => {
+    api.get('/events/' + id)
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
-      expect(response.body.cospace.address).to.equal('1 Good Evening Street, Singapore')
+      expect(response.body.event.address).to.equal('1 Good Evening Street, Singapore')
       done()
     })
   })
   after((done) => {
-    api.delete('/co-working-spaces/' + id)
+    api.delete('/events/' + id)
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(err).to.be.a('null')
-        CoSpace.findById({_id: id}, function (err, cospace) {
+        Event.findById({_id: id}, function (err, event) {
           expect(err).to.be.a('null')
-          expect(cospace).to.be.a('null')
+          expect(event).to.be.a('null')
           done()
         })
       })
   })
 })
 
-// DELETE /co-working-spaces/:id
-//   ✓ should remove a co-working-space document
+// DELETE /events/:id
+//   ✓ should remove an event document
 
-describe('DELETE /co-working-spaces/:id', () => {
+describe('DELETE /events/:id', () => {
   var id
   before((done) => {
-    api.post('/co-working-spaces')
+    api.post('/events')
       .set('Accept', 'application/json')
       .send({
-        'name': 'test offices',
+        'name': 'test event',
         'address': '122234',
         'description': 'this is a test',
         'website': 'test.com',
@@ -200,14 +200,14 @@ describe('DELETE /co-working-spaces/:id', () => {
         done()
       })
   })
-  it('should remove a co-working-space document', (done) => {
-    api.delete('/co-working-spaces/' + id)
+  it('should remove a event document', (done) => {
+    api.delete('/events/' + id)
       .set('Accept', 'application/json')
       .end((error, response) => {
         expect(error).to.be.a('null')
-        CoSpace.findById({_id: id}, function (err, cospace) {
+        Event.findById({_id: id}, function (err, event) {
           expect(err).to.be.a('null')
-          expect(cospace).to.be.a('null')
+          expect(event).to.be.a('null')
           done()
         })
       })
