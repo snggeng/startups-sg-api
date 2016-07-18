@@ -28,8 +28,6 @@ function createInvestor (req, res) {
 
   investor.save((err, investor) => {
     if (err) res.json({message: 'could not create investor b/c: ' + err})
-
-    console.log(Investor.findOne({auth_token: req.query.auth_token}))
     res.send(investor)
   })
 }

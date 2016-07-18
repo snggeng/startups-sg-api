@@ -28,8 +28,6 @@ function createEvent (req, res) {
 
   event.save((err, event) => {
     if (err) res.json({message: 'could not create event b/c: ' + err})
-
-    console.log(Event.findOne({auth_token: req.query.auth_token}))
     res.send(event)
   })
 }
