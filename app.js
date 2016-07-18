@@ -51,7 +51,7 @@ app.use((err, req, res, next) => {
 
 // START SERVER
 app.listen(process.env.PORT, () => {
-  console.log(`Server Listening on port ${process.env.PORT}`)
+  (`Server Listening on port ${process.env.PORT}`)
 })
 
 // CONNECT TO DB
