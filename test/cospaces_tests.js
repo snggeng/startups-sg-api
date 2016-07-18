@@ -1,8 +1,9 @@
-/* globals describe it */
+/* globals describe before it */
 const expect = require('chai').expect
 const supertest = require('supertest')
 const app = require('../app')
 const api = supertest('http://localhost:3000')
+const CoSpace = require('../models/cospace')
 
 // GET /co-working-spaces
 //   ✓ should return a 200 response
@@ -55,10 +56,7 @@ describe('GET /co-working-spaces', function () {
 
 // POST /co-working-spaces
 //   ✓ should return a 200 response
-//   ✓ should return a 422 response if the field color is wrong
-//   ✓ should return an error message if the color field is wrong
 //   ✓ should add a new co-working-space to the database
-//   ✓ should return an error if the color is wrong
 
 describe('POST /co-working-spaces', function () {
   this.timeout(10000)
@@ -89,16 +87,16 @@ describe('GET /co-working-spaces/:id', function () {
     .set('Accept', 'application/json')
     .expect(200, done)
   })
-  // it('should return an object that has the fields "name" and "address"', (done) => {
-  //   api.get('/co-working-spaces/578bd9c35251efd197d28ad5')
-  //   .set('Accept', 'application/json')
-  //   .end((error, response) => {
-  //     expect(error).to.be.a('null')
-  //     expect(response.body[0]).to.have.property('name')
-  //     expect(response.body[0]).to.have.property('address')
-  //     done()
-  //   })
-  // })
+  it('should return an object that has the fields "name" and "address"', (done) => {
+    api.get('/co-working-spaces/578bd9c35251efd197d28ad5')
+    .set('Accept', 'application/json')
+    .end((error, response) => {
+      expect(error).to.be.a('null')
+      expect(response.body.cospace).to.have.property('name')
+      expect(response.body.cospace).to.have.property('address')
+      done()
+    })
+  })
 })
 
 // PUT /co-working-spaces/:id
@@ -129,24 +127,37 @@ describe('PUT /co-working-spaces/:id', function () {
 // DELETE /co-working-spaces/:id
 //   ✓ should remove a co-working-space document
 
-// describe('DELETE /co-working-spaces/:id', () => {
-//   it('should remove a co-working-space document', (done) => {
-//     api.get('/co-working-spaces')
-//     .end(function (err, res) {
-//       expect(err).to.be.a('null')
-//       api.delete('/co-working-spaces/1')
-//       .set('Accept', 'application/json')
-//       .end((error, response) => {
-//         expect(error).to.be.a('null')
-//         expect(response).should.have.status(200)
-//         expect(response).should.be.json
-//         expect(response).body.should.be.a('object')
-//         expect(response).body.should.have.property('REMOVED')
-//         expect(response).body.REMOVED.should.be.a('object')
-//         expect(response).body.REMOVED.should.have.property('name')
-//         expect(response).body.REMOVED.should.have.property('_id')
-//         done()
-//       })
-//     })
-//   })
-// })
+describe('DELETE /co-working-spaces/:id', () => {
+  var id
+  before((done) => {
+    api.post('/co-working-spaces')
+      .set('Accept', 'application/json')
+      .send({
+        'name': 'test offices',
+        'address': '122234',
+        'description': 'this is a test',
+        'website': 'test.com',
+        'logo': 'test.png'
+      }).end((err, res) => {
+        expect(err).to.be.a('null')
+        id = res.body._id
+        done()
+      })
+  })
+  it('should remove a co-working-space document', (done) => {
+    api.delete('/co-working-spaces/' + id)
+      .set('Accept', 'application/json')
+      .end((error, response) => {
+        expect(error).to.be.a('null')
+        CoSpace.findById({_id: id}, function (err, cospace) {
+          expect(err).to.be.a('null')
+          expect(cospace).to.be.a('null')
+          done()
+        })
+      })
+  })
+  // after((done) => {
+  //   api.deleted('/co-working-spaces/1').set('Accept', 'application/json')
+  //   .end(done)
+  // })
+})
