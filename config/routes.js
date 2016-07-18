@@ -5,6 +5,8 @@ const cospaceController = require('../controllers/cospaces_controller')
 const eventController = require('../controllers/events_controller')
 const government_programController = require('../controllers/government_programs_controller')
 const investorController = require('../controllers/investors_controller')
+const userController = require('../controllers/users_controller')
+const AuthController = require('../controllers/auth_controller')
 
 // Allow cross-domain ajax requests
 router.use((req, res, next) => {
@@ -72,5 +74,11 @@ router.route('/investors/:id')
   .put(investorController.updateInvestor)
   // '/investors/:id' DELETE
   .delete(investorController.destroyInvestor)
+
+router.get('/users', userController.getAll)
+router.get('/users/:id', userController.getUser)
+
+router.post('/signup', AuthController.signUp)
+router.post('/signin', AuthController.signIn)
 
 module.exports = router
