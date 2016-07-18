@@ -28,8 +28,6 @@ function createCoSpace (req, res) {
 
   cospace.save((err, cospace) => {
     if (err) res.json({message: 'could not create cospace b/c: ' + err})
-
-    console.log(CoSpace.findOne({auth_token: req.query.auth_token}))
     res.send(cospace)
   })
 }
