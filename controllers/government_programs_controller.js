@@ -28,8 +28,6 @@ function createGovernment_Program (req, res) {
 
   government_program.save((err, government_program) => {
     if (err) res.json({message: 'could not create government_program b/c: ' + err})
-
-    console.log(Government_Program.findOne({auth_token: req.query.auth_token}))
     res.send(government_program)
   })
 }
