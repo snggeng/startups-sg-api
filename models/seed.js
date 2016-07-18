@@ -63,7 +63,7 @@ var data = [
     ]
   },
   {
-    'model': 'Investors',
+    'model': 'Investor',
     'documents': [
       {
         'name': 'Clearbridge Accelerator Pte Ltd',
