@@ -156,8 +156,67 @@ describe('DELETE /co-working-spaces/:id', () => {
         })
       })
   })
-  // after((done) => {
-  //   api.deleted('/co-working-spaces/1').set('Accept', 'application/json')
-  //   .end(done)
-  // })
+})
+
+// POST /signup
+describe('POST /signup', function () {
+  this.timeout(10000)
+  it('should add an user and return it', (done) => {
+    api.post('/signup')
+      .set('Accept', 'application/json')
+      .send({
+        'name': 'founder',
+        'email': 'founder@gmail.com',
+        'password': '123456'
+      }).end((error, response) => {
+        expect(error).to.be.a('null')
+        done()
+      })
+  })
+  it('should expect a 401 error due signup error', (done) => {
+    api.post('/signup')
+      .set('Accept', 'application/json')
+      .send({
+        'name': 'Milik',
+        'email': 'thebuild@isgreen.io'
+      })
+      .expect(401, done)
+  })
+})
+
+// POST /signin
+describe('POST /signin', function () {
+  this.timeout(10000)
+  // it('should ')
+  it('should return user name', (done) => {
+    api.post('/signin')
+      .set('Accept', 'application/json')
+      .send({
+        'email': 'shihqian@gmail.com',
+        'password': '123456'
+      })
+      .end((error, response) => {
+        expect(error).to.be.a('null')
+        expect(response.body.message).to.equal('sign in success! welcome: Ariel')
+        done()
+      })
+  })
+  it('should expect a 401 error due signup error', (done) => {
+    api.post('/signup')
+      .set('Accept', 'application/json')
+      .send({
+        'email': 'xxx@yzz.com',
+        'password': '123456'
+      })
+      .expect(401, done)
+  })
+  it('should expect another 401 error due to incorrect password', (done) => {
+    api.post('/signup')
+    .set('Accept', 'application/json')
+    .send({
+      'email': 'shihqian@gmail.com',
+      'password': '13212412'
+    })
+    .expect(401, done)
+  })
 })

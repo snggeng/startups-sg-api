@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 
 const cospaceController = require('../controllers/cospaces_controller')
+const userController = require('../controllers/users_controller')
+const AuthController = require('../controllers/auth_controller')
 
 // Allow cross-domain ajax requests
 router.use((req, res, next) => {
@@ -27,5 +29,11 @@ router.route('/co-working-spaces/:id')
   .put(cospaceController.updateCoSpace)
   // '/cospaces/:id' DELETE
   .delete(cospaceController.destroyCoSpace)
+
+router.get('/users', userController.getAll)
+router.get('/users/:id', userController.getUser)
+
+router.post('/signup', AuthController.signUp)
+router.post('/signin', AuthController.signIn)
 
 module.exports = router
