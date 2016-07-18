@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const uuid = require('uuid')
-const CoSpace = require('cospaces')
+const CoSpace = require('./cospace')
 
 const UserSchema = new mongoose.Schema({
   name: { type: String, required: true },
