@@ -1,5 +1,5 @@
 // load in the environment vars
-require('dotenv').config()
+require('dotenv').config({silent: true})
 
 const express = require('express')
 const app = express()
