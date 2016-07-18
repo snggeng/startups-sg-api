@@ -7,11 +7,14 @@ var seeder = require('mongoose-seed')
 seeder.connect(process.env.MONGODB_URI, function () {
   // Load Mongoose models
   seeder.loadModels([
-    'models/cospace.js'
+    'models/cospace.js',
+    'models/event.js',
+    'models/government_program.js',
+    'models/investor.js'
   ])
 
   // Clear specified collections
-  seeder.clearModels(['Cospace'], function () {
+  seeder.clearModels(['CoSpace', 'Event', 'Government_Program', 'Investor'], function () {
     // Callback to populate DB once collections have been cleared
     seeder.populateModels(data)
   })
@@ -60,7 +63,7 @@ var data = [
     ]
   },
   {
-    'model': 'Investors',
+    'model': 'Investor',
     'documents': [
       {
         'name': 'Clearbridge Accelerator Pte Ltd',
