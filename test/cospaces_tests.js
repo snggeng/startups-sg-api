@@ -156,8 +156,4 @@ describe('DELETE /co-working-spaces/:id', () => {
         })
       })
   })
-  // after((done) => {
-  //   api.deleted('/co-working-spaces/1').set('Accept', 'application/json')
-  //   .end(done)
-  // })
 })
