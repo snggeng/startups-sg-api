@@ -40,6 +40,7 @@ describe('POST /signin', function () {
         'password': '123456'
       })
       .end((error, response) => {
+        console.log(response.body)
         expect(error).to.be.a('null')
         expect(response.body.message).to.equal('Sign in successful! Welcome: founder')
         done()
