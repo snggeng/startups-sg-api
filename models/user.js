@@ -2,13 +2,20 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const uuid = require('uuid')
 const CoSpace = require('./cospace')
+const Event = require('./event')
+const Gov = require('./government_program')
+const Investor = require('./investor')
 
 const UserSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   auth_token: { type: String, unique: true },
-  _cospaces: [{type: mongoose.Schema.Types.ObjectId, ref: 'CoSpace'}]
+  admin: {type: Boolean},
+  _cospaces: [{type: mongoose.Schema.Types.ObjectId, ref: 'CoSpace'}],
+  _events: [{type: mongoose.Schema.Types.ObjectId, ref: 'Event'}],
+  _government_programs: [{type: mongoose.Schema.Types.ObjectId, ref: 'Gov'}],
+  _investors: [{type: mongoose.Schema.Types.ObjectId, ref: 'Investor'}]
 })
 
 UserSchema.pre('save', function (next) {

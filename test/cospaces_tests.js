@@ -48,7 +48,7 @@ describe('GET /co-working-spaces', function () {
       .set('Accept', 'application/json')
       .end((error, response) => {
         expect(error).to.be.a('null')
-        expect(response.body).to.have.lengthOf(3)
+        expect(response.body).to.have.lengthOf(5)
         done()
       })
   })
@@ -70,7 +70,7 @@ describe('POST /co-working-spaces', function () {
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
-      expect(response.body[response.body.length - 1].name).to.equal('outram offices')
+      expect(response.body[response.body.length - 1].name).to.equal('The Working Capitol')
       done()
     })
   })
