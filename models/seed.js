@@ -22,7 +22,7 @@ seeder.connect(process.env.MONGODB_URI, function () {
 
 // Data array containing seed data - documents organized by Model
 var data = [
-  {
+  { // CO-WORKING SPACES
     'model': 'CoSpace',
     'documents': [
       {
@@ -62,7 +62,7 @@ var data = [
       }
     ]
   },
-  {
+  { // INCUBATORS-ACCELERATORS
     'model': 'Incubator_Accelerator',
     'documents': [
       {
@@ -115,7 +115,7 @@ var data = [
       }
     ]
   },
-  {
+  { // INVESTORS
     'model': 'Investor',
     'documents': [
       {
@@ -152,7 +152,7 @@ var data = [
       }
     ]
   },
-  {
+  { // EVENTS
     'model': 'Event',
     'documents': [
       {
@@ -247,7 +247,7 @@ var data = [
       }
     ]
   },
-  {
+  { // GOVERNMENT PROGRAMS
     'model': 'Government_Program',
     'documents': [
       {
