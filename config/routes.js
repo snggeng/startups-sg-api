@@ -12,7 +12,7 @@ const AuthController = require('../controllers/auth_controller')
 // Allow cross-domain ajax requests
 router.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, User-Email, Auth-Token')
   next()
 })
 
