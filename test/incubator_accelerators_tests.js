@@ -18,15 +18,15 @@ describe('GET /', () => {
   })
 })
 
-describe('GET /incubator_accelerators', function () {
+describe('GET /incubator-accelerators', function () {
   this.timeout(10000)
   it('should return a 200 response', (done) => {
-    api.get('/incubator_accelerators')
+    api.get('/incubator-accelerators')
     .set('Accept', 'application/json')
     .expect(200, done)
   })
   it('should return an array', (done) => {
-    api.get('/incubator_accelerators')
+    api.get('/incubator-accelerators')
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
@@ -35,7 +35,7 @@ describe('GET /incubator_accelerators', function () {
     })
   })
   it('should return an object that has a field called "name"', (done) => {
-    api.get('/incubator_accelerators')
+    api.get('/incubator-accelerators')
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
@@ -44,7 +44,7 @@ describe('GET /incubator_accelerators', function () {
     })
   })
   it('should return all the records in the database', (done) => {
-    api.get('/incubator_accelerators')
+    api.get('/incubator-accelerators')
       .set('Accept', 'application/json')
       .end((error, response) => {
         expect(error).to.be.a('null')
@@ -54,19 +54,19 @@ describe('GET /incubator_accelerators', function () {
   })
 })
 
-// POST /incubator_accelerators
+// POST /incubator-accelerators
 //   ✓ should return a 200 response
 //   ✓ should add a new investor to the database
 
-describe('POST /incubator_accelerators', function () {
+describe('POST /incubator-accelerators', function () {
   this.timeout(10000)
   it('should return a 200 response', (done) => {
-    api.get('/incubator_accelerators')
+    api.get('/incubator-accelerators')
     .set('Accept', 'application/json')
     .expect(200, done)
   })
   it('should add a investor object to the collection', (done) => {
-    api.get('/incubator_accelerators')
+    api.get('/incubator-accelerators')
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
@@ -76,15 +76,15 @@ describe('POST /incubator_accelerators', function () {
   })
 })
 
-// GET /incubator_accelerators/:id
+// GET /incubator-accelerators/:id
 //   ✓ should return a 200 response
 //   ✓ should return an object containing the fields "name" and "address"
 
-describe('GET /incubator_accelerators/:id', function () {
+describe('GET /incubator-accelerators/:id', function () {
   this.timeout(10000)
   var id
   before((done) => {
-    api.post('/incubator_accelerators')
+    api.post('/incubator-accelerators')
       .set('Accept', 'application/json')
       .send({
         'name': 'test incubator_accelerator',
@@ -99,12 +99,12 @@ describe('GET /incubator_accelerators/:id', function () {
       })
   })
   it('should return a 200 response', (done) => {
-    api.get('/incubator_accelerators/' + id)
+    api.get('/incubator-accelerators/' + id)
     .set('Accept', 'application/json')
     .expect(200, done)
   })
   it('should return an object that has the fields "name" and "address"', (done) => {
-    api.get('/incubator_accelerators/' + id)
+    api.get('/incubator-accelerators/' + id)
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
@@ -114,7 +114,7 @@ describe('GET /incubator_accelerators/:id', function () {
     })
   })
   after((done) => {
-    api.delete('/incubator_accelerators/' + id)
+    api.delete('/incubator-accelerators/' + id)
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(err).to.be.a('null')
@@ -127,15 +127,15 @@ describe('GET /incubator_accelerators/:id', function () {
   })
 })
 
-// PUT /incubator_accelerators/:id
+// PUT /incubator-accelerators/:id
 //   ✓ should return a 200 response
 //   ✓ should update a investor document
 
-describe('PUT /incubator_accelerators/:id', function () {
+describe('PUT /incubator-accelerators/:id', function () {
   this.timeout(10000)
   var id
   before((done) => {
-    api.post('/incubator_accelerators')
+    api.post('/incubator-accelerators')
       .set('Accept', 'application/json')
       .send({
         'name': 'test incubator_accelerator',
@@ -150,7 +150,7 @@ describe('PUT /incubator_accelerators/:id', function () {
       })
   })
   it('should return a 200 response', (done) => {
-    api.put('/incubator_accelerators/' + id)
+    api.put('/incubator-accelerators/' + id)
     .set('Accept', 'application/json')
     .send({
       'address': '1 Good Evening Street, Singapore'
@@ -158,7 +158,7 @@ describe('PUT /incubator_accelerators/:id', function () {
     .expect(200, done)
   })
   it('should update a investor document', (done) => {
-    api.get('/incubator_accelerators/' + id)
+    api.get('/incubator-accelerators/' + id)
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
@@ -167,7 +167,7 @@ describe('PUT /incubator_accelerators/:id', function () {
     })
   })
   after((done) => {
-    api.delete('/incubator_accelerators/' + id)
+    api.delete('/incubator-accelerators/' + id)
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(err).to.be.a('null')
@@ -180,13 +180,13 @@ describe('PUT /incubator_accelerators/:id', function () {
   })
 })
 
-// DELETE /incubator_accelerators/:id
+// DELETE /incubator-accelerators/:id
 //   ✓ should remove an investor document
 
-describe('DELETE /incubator_accelerators/:id', () => {
+describe('DELETE /incubator-accelerators/:id', () => {
   var id
   before((done) => {
-    api.post('/incubator_accelerators')
+    api.post('/incubator-accelerators')
       .set('Accept', 'application/json')
       .send({
         'name': 'test incubator_accelerator',
@@ -201,7 +201,7 @@ describe('DELETE /incubator_accelerators/:id', () => {
       })
   })
   it('should remove a investor document', (done) => {
-    api.delete('/incubator_accelerators/' + id)
+    api.delete('/incubator-accelerators/' + id)
       .set('Accept', 'application/json')
       .end((error, response) => {
         expect(error).to.be.a('null')
