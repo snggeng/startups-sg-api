@@ -48,7 +48,7 @@ describe('GET /investors', function () {
       .set('Accept', 'application/json')
       .end((error, response) => {
         expect(error).to.be.a('null')
-        expect(response.body).to.have.lengthOf(10)
+        expect(response.body).to.have.lengthOf(4)
         done()
       })
   })
