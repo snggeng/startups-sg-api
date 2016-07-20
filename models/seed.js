@@ -10,11 +10,12 @@ seeder.connect(process.env.MONGODB_URI, function () {
     'models/cospace.js',
     'models/event.js',
     'models/government_program.js',
-    'models/investor.js'
+    'models/investor.js',
+    'models/incubator-accelerator.js'
   ])
 
   // Clear specified collections
-  seeder.clearModels(['CoSpace', 'Event', 'Government_Program', 'Investor'], function () {
+  seeder.clearModels(['CoSpace', 'Event', 'Government_Program', 'Investor', 'Incubator_Accelerator'], function () {
     // Callback to populate DB once collections have been cleared
     seeder.populateModels(data)
   })
