@@ -11,7 +11,7 @@ seeder.connect(process.env.MONGODB_URI, function () {
     'models/event.js',
     'models/government_program.js',
     'models/investor.js',
-    'models/incubator-accelerator.js'
+    'models/incubator_accelerator.js'
   ])
 
   // Clear specified collections
