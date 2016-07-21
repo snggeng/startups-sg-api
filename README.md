@@ -14,5 +14,10 @@ We are a team of web developers currently enrolled in General Assembly Singapore
 * MongoDB
 * Express
 
+## How to use (Client API)
+Set your server URL to 'http://startups-sg.herokuapp.com'
+
+Check out our API Docs [here](https://snowsandpatrol.github.io/startup-sg-documentation) to configure the API.
+
 ## Want to contribute?
 Make a pull request! Or get in touch with any of us via github.
