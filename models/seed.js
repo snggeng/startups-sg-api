@@ -26,42 +26,313 @@ var data = [
   { // CO-WORKING SPACES
     'model': 'CoSpace',
     'documents': [
-      {
-        'name': 'JustCo',
-        'address': '6 Raffles Quay #16-01, Singapore 048580 and 120 Robinson Road #15-01, Singapore 068913',
-        'website': 'http://www.justcoglobal.com/',
-        'description': 'A creative coworking and hot desking space in Singapore to suit your every need! At JustCo we endeavor to foster a creative environment, with a myriad of brilliant individuals and organizations vibing off each other to produce stunning work. We are excited to have fresh new individuals or organizations join our ever-growing community.',
-        'logo': ''
-      },
-      {
-        'name': 'The Great Room',
-        'address': 'One George Street, Level 10. Singapore',
-        'website': 'http://thegreatroomoffices.com',
-        'description': 'The Great Room sets itself apart as a hospitality-inspired workplace, combining the emotional appeal of a luxury hotel with the productivity of a professional workplace. Situated in the heart of the CBD, this 15,000 sq ft workspace aims to change the way you feel about going to work, and is exactly where you want to bring partners, clients and investors. The Great Room welcomes leaders and launchers hailing from the technology, creative and finance industries. It has also pioneered the ‘hot office’ concept, which are private offices available on demand for one to four people.',
-        'logo': ''
-      },
-      {
-        'name': 'The Hive',
-        'address': '59 New Bridge Road, Singapore',
-        'website': 'http://thehive.sg/about/',
-        'description': 'A beautifully designed workspace in the city centre. The Hive Singapore is designed for your way of working and living – a comfortable and welcoming environment where your business can thrive. You will be joining a coworking community that spans three countries, giving you access to a wonderfully diverse network.',
-        'logo': ''
-      },
-      {
-        'name': 'The Hub',
-        'address': '128 Prinsep Street, 188655',
-        'website': 'http://singapore.impacthub.net/homepage',
-        'description': "The Hub Singapore knows that it takes courage to pursue life on your own terms. That's why they've built a home for courageous people and businesses to work together. They close social distances, enabling you to launch your ventures and scale your businesses.\nMore than just a coworking space, they're a trusted community, stimulating events platform, and a base from which to launch your business and scale your impact. At The Hub Singapore, find co-conspirators, mentors, investors, creators, partners and allies. They are the only space to bring together people serious about pursuing purpose-- whether it is personal purpose through self-actualization, or societal purpose in solving the most pressing issues of today.\nPersons of Interest: Grace Sai",
-        'logo': ''
-      },
-      {
-        'name': 'The Working Capitol',
-        'address': '1 Keong Saik Rd, 089109',
-        'website': 'https://www.theworkingcapitol.com/en',
-        'description': "It takes over the historic AIA building and merges five shophouses into one giant co-working space. This space is open plan with lots of light from the shuttered windows, despite the fact that it's decked out in a mandatory white washed color scheme. The co-working space also has private offices and a dedicated events venue with a pretty flexible schedule: you can book on a daily basis or have a permanent space. It's also home to a cafe, The People Vs., with a selection of coffees, teas, breads and the likes.",
-        'logo': ''
-      }
-    ]
+  {
+    "name": "The Great Room",
+    "address": "1 George Street #10-01, Singapore 049145",
+    "website": "http://thegreatroomoffices.com",
+    "description": "The Great Room sets itself apart as a hospitality-inspired workplace, combining the emotional appeal of a luxury hotel with the productivity of a professional workplace. Situated in the heart of the CBD, this 15,000 sq ft workspace aims to change the way you feel about going to work, and is exactly where you want to bring partners, clients and investors. The Great Room welcomes leaders and launchers hailing from the technology, creative and finance industries. It has also pioneered the ‘hot office’ concept, which are private offices available on demand for one to four people.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "The Hive",
+    "address": "59 New Bridge Road, Singapore",
+    "website": "http://thehive.sg/about/",
+    "description": "A beautifully designed workspace in the city centre. The Hive Singapore is designed for your way of working and living – a comfortable and welcoming environment where your business can thrive. You will be joining a coworking community that spans three countries, giving you access to a wonderfully diverse network.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "The Hub",
+    "address": "128 Prinsep Street, Singapore 188655",
+    "website": "http://singapore.impacthub.net/homepage",
+    "description": "The Hub Singapore knows that it takes courage to pursue life on your own terms. That's why they've built a home for courageous people and businesses to work together. They close social distances, enabling you to launch your ventures and scale your businesses.\nMore than just a coworking space, they're a trusted community, stimulating events platform, and a base from which to launch your business and scale your impact. At The Hub Singapore, find co-conspirators, mentors, investors, creators, partners and allies. They are the only space to bring together people serious about pursuing purpose-- whether it is personal purpose through self-actualization, or societal purpose in solving the most pressing issues of today.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "The Refinery",
+    "address": "115 King George's Avenue #01-02, Singapore 208561",
+    "website": "http://www.therefinery.sg/",
+    "description": "This hip three-in-one space is set up by The General Company, the same folks who spearhead Tyrwhitt General Company and design firm Architology. The Refinery houses a yakitori joint, a bespoke cocktail bar and a craft workshop. Table spaces start from $450 a month and you also get free coffee and whisky too. Plus, there are also designers around to offer friendly advice and the stay open all hours of the day.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "The Working Capitol",
+    "address": "1 Keong Saik Rd, Singapore 089109",
+    "website": "https://www.theworkingcapitol.com/en",
+    "description": "It takes over the historic AIA building and merges five shophouses into one giant co-working space. This space is open plan with lots of light from the shuttered windows, despite the fact that it's decked out in a mandatory white washed color scheme. The co-working space also has private offices and a dedicated events venue with a pretty flexible schedule: you can book on a daily basis or have a permanent space. It's also home to a cafe, The People Vs., with a selection of coffees, teas, breads and the likes.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Art Social Haus",
+    "address": "11 Yong Siak St, Singapore 168646",
+    "website": "http://www.facebook.com/artsocialhaus",
+    "description": "Arts Social Haus is an independent co-working art space, where members are granted 24 hour access to the studio and events areas. Membership fees start at $280 per month for one person, and includes working facilities and free admission to exhibitions held at the venue during the membership period. They stay open all day as well.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Bash",
+    "address": "#03-01, 79 Ayer Rajah Crescent, Singapore 139955",
+    "website": "http://www.infocomminvestments.com/BASH.html",
+    "description": "BASH (Build Amazing start-ups Here), is Singapore’s biggest integrated start-ups space with the capability of congregating members and partners of the tech building community across the entire value chain of ideation, acceleration, incubation to expansion – from accelerators, investors, incubators to entrepreneurship - all under one roof.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Co.Lab by Silicon Straits",
+    "address": "71 Ayer Rajah Crescent, Singapore 139951",
+    "website": "http://colab.siliconstraits.com/",
+    "description": "CO.LAB - a co-working space, fabrication lab and collaboration zone spanning 2,000 sq ft in the heart of Singapore's startup hub, Blk 71",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Collective Works",
+    "address": "100 Cecil St, Singapore 069532",
+    "website": "http://www.collective.works/",
+    "description": "Collective Works was designed from the ground up to look and operate differently. Our space incorporates many of the latest trends in commercial office planning: The design is based on a creative studio layout with facing ‘coworkstations’ a design which encourages members to collaborate while they work. Our flexible informal meeting areas like our lounge and huge kitchen encourage interaction and serendipitous meetings. Meanwhile the use of multi-height work surfaces and flexible furniture arrangements give members the option to work where they want and how they want encouraging creativity.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Cowerkz",
+    "address": "259A Geylang Road, Singapore",
+    "website": "http://www.cowerkz.com/",
+    "description": "CoWerkz is a newly renovated serviced office, offering a refreshing and peaceful office space sanctuary for work with private rooms. Our suite of services cater to a wide range of client requirements from Office Space Rental to Virtual Office service. We want to encourage young entrepreneurs to \"Start, Run & Grow your Business\" - having a ready-to-go, fully-functional office space with brand new furniture, business address, office phone line, wifi/lan, administrative support and many more. We have different room sizes to cater from single to 3 work desks.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "HackerspaceSG",
+    "address": "344B King George’s Ave, Singapore 208576",
+    "website": "https://hackerspace.sg/",
+    "description": "There are hundreds of hacker spaces around the world, and Singapore’s version brings together communities of tech, science, fermentation, music, digital arts and electronic arts. Offering the option to cowork during the day, Hackerspace also holds regular events, meetups, presentations, workshops and movie nights for the local community. The space is popular with tech startups and has a range of facilities, including three 3D printers and a bank of development boards to boost collaboration. Regular members pay $128/month, Add-ons such a rented locker spaces and an office address are also available for a small additional monthly fee. There are also open online communities that is accessible to even non members.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "HauteDesk",
+    "address": "105 Cecil St, Singapore 069534",
+    "website": "",
+    "description": "HauteDesk co-working space is located in Central Business District, near to Telok Ayer MRT and Lau Pa Sat. The vicinity is the most vibrant corporate neighbourhood in the prime of Singapore. It is the stronghold of international corporations and distinguished local businesses. A place where top talents worldwide gather to make and live their dreams. We aim to be a platform to synergize the ideas, talents and opportunities offered by the city for entrepreneurs, innovators, and pioneers alike.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Hired Turf",
+    "address": "883 North Bridge Rd, Singapore 198784",
+    "website": "http://hiredturf.com/",
+    "description": "We are a coworking space that provides relaxed atmosphere for creative people. Our workspace is a two-storey open-concept office, consisting of 20 seats and a medium sized meeting room.\nWe strive to build a community of professionals: startup peeps, software engineers, graphic designers, product designers and social media strategists. We provide professional office chairs, 23-inch IPS LED monitors, fast speed Internet connection to make HiredTurf one of the most comfortable and desired work place in town.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Inner City Offices",
+    "address": "229 Mountbatten Rd, Singapore 398007",
+    "website": "http://icosg.com/",
+    "description": "Providing a fully-equipped office space to get your work done. Fully furnished with pantry and meeting rooms.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "JC8 at Cowork@SG",
+    "address": "8 Joo Chiat Terrace, Singapore 427181",
+    "website": "http://cowork.sg/",
+    "description": "We provide the most flexible work spaces in Singapore through membership or pay-per-use. Every member gets to enjoy access to any of Cowork@SG's workspaces, with low commitment term of 6 months. It's as simple as plug and play!",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "JustCo",
+    "address": "#15-01, 120 Robinson Rd, 068913",
+    "website": "http://www.justcoglobal.com/",
+    "description": "A creative coworking and hot desking space in Singapore to suit your every need! At JustCo we endeavor to foster a creative environment, with a myriad of brilliant individuals and organizations vibing off each other to produce stunning work. We are excited to have fresh new individuals or organizations join our ever-growing community.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Keong Saik Collab",
+    "address": "29 Keong Saik Rd, Singapore 089136",
+    "website": "http://www.keongsaikcollab.com/#frame-start",
+    "description": "Keong Saik Collab | 白社会 is a co-working space that is fueled with do-ers and passion driven folks who form this energetic space at Keong Saik Road. Working with like minded people to make things happen in this tiny red dot, we are a community that bask in collaborations, partnerships and ownership.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "MakeSpace",
+    "address": "318C King George's Ave, Singapore 208563",
+    "website": "http://makespace.sg/",
+    "description": "Makespace provides an open, collaborative-driven environment where innovative businesses and individuals can flourish. We provide all your basic needs, so you focus on getting the job done. Makespace is yOUR Space! Do drop by to visit us. There is no better way to experience Makespace & Coworking.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Mettle Work",
+    "address": "50 Lorong 17 Geylang, Singapore",
+    "website": "http://mettlework.co/",
+    "description": "Mettle Work is a 24 hour place ideal for last minute design proposal making and mad dash for late night Dim Sum across the street. Mettle Work isn't your typical office though, as each user will have warehousing, production work bench and tinkering space. In short, it is a place for hustle and bustle of prototyping, modelling and craft.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Plug-in@Blk71",
+    "address": "71 Ayer Rajah Crescent, #02-18, Singapore 139951",
+    "website": "http://www2.blk71.com/",
+    "description": "At Blk71, we like to get creative with our spaces. Like how start-ups love using the kopitiam-themed pantry in NUS Enterprise@Blk71 for business huddles. Or how a simple lobby wall has been transformed into a colourful canvas of entrepreneurial visions and art.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "plusconcept",
+    "address": "16 Purvis St, Singapore 188595",
+    "website": "http://www.plusconcept.space/",
+    "description": "Your professional home to focus, grow your business and to simply getting things done in a great & trusted environment.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Red Dot Ventures",
+    "address": "#04-04, 79 Ayer Rajah Crescent, Block 79, Singapore 139955",
+    "website": "http://www.rdvspace.strikingly.com/",
+    "description": "",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "SiTF House",
+    "address": "79 Ayer Rajah Crescent #02-03, Singapore 139955",
+    "website": "http://www.sitf123js.com/",
+    "description": "SITF House located at block 79 right in the heart of Singapore's startup community puts you within reach of venture capital firms, incubators, government agencies and other tech startups. We provide modern collaborative facilities such as: discussion rooms, conference rooms, 24 hours access to co-working offices, pantry and lounge as well as training facilities amongst basic office necessities such as photocopying, printing, air-conditioning and wifi.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Smartspace",
+    "address": "261 Waterloo Street, Singapore 180261",
+    "website": "http://www.smartspace.sg/",
+    "description": "This is another one of the cool shared spaces at arts enclave Bras Basah, a huge 8,000 sq. ft. space with meeting rooms, kitchen areas, work stations, private desks, and even space for a spot of table tennis. It’s also user-friendly and accessible per-hour booking rates with work stations starting from $30 a day and going up to $600 a month. This space also lets you work late and is open round the clock.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "SpringBoard",
+    "address": "19 Cecil Street, Singapore",
+    "website": "http://springboard.sg/",
+    "description": "We are passionate about supporting entrepreneurs and small businesses. We provide a one-stop service to setup your business in Singapore. For those clients that choose our space in central Singapore it provides a contemporary space in the heart of Singapore’s CBD district. Our space has all the services you need so that you can do what you are good at and leave the rest to us.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Startup Spaze",
+    "address": "36 Purvis Street, Singapore 188613",
+    "website": "",
+    "description": "We provide a conducive and collaborative community working space for entrepreneurs, founders and startups to work in. A cost efficient place with incredible environment for you to work on your startup. You focus on your startup and we will handle the rest.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Technopreneur Circle",
+    "address": "250 North Bridge Road #05-01, Singapore 179101",
+    "website": "https://www.technopreneurcircle.com/",
+    "description": "A free co-working space launched by Vertex Venture. The space itself is relatively small and humble — it looks like a big conference room that has been spruced up with nice interior design and the basics to get work done — tables, chairs, free Wi-Fi. But it does have a great location, in the heart of the city on the fifth floor of Raffles City Tower.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "The Co",
+    "address": "75 High Street, Singapore 179435",
+    "website": "http://jointhe.co/",
+    "description": "For those used to hot-desking and minimalist spaces, this eight-storey building fits the bill. It has a dark, glossy lobby that's no stranger to buzzy corporate parties, and an open concept third level that's hosted the likes of Startup Grind and Elance, making it quite a focus for those on trend with the local scene. Individual desks go for $45 a day, $350 for 10 visits a month and $600 monthly, while a swanky office suite can set you back $700-990 per person.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "The Loft Offices",
+    "address": "46 South Bridge Road, Singapore",
+    "website": "http://www.theloftoffices.com/",
+    "description": "The Loft Offices is not just about a work or event space, but about a collaborative working environment where businesses can grow together. One of our highlights is a creative, stimulating open-concept working space. Think of it as working in an idea room – this space is well-suited for young growing start-ups, who wish to establish a foothold from the heart of the city.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "The Outpost",
+    "address": "14 Lorong 32, Singapore 398277",
+    "website": "http://theoutpost.biz/",
+    "description": "The OutPost offers a unique coworking space in Singapore that caters to entrepreneurial growth companies entering the Southeast Asian markets.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Trehaus",
+    "address": "#03-01, 442 Orchard Rd, Singapore 238879",
+    "website": "http://trehauscowork.com/",
+    "description": "Trehaus is Singapore’s first co-working space complete with child-friendly learning facilities. Being a working and present parent can be challenging, and it’s for this very reason that we were built.\nWe offer you the option of bringing your children to work at a conducive workspace – so that while you build your career, your little ones can build their minds too.\nWe’re for every parent and every business that embraces the peace of mind that comes with being able to work in a flexible and enriching environment, while keeping their little ones close.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Woolf Works",
+    "address": "19 Carpenter Street, #05-01, Singapore 059908",
+    "website": "http://www.woolfworks.sg/en",
+    "description": "Singapore’s first women-only co-working space—named after literary icon Virginia Woolf—is dedicated to developing female business leaders. It connects women with a like-minded community, helps them collaborate with other business owners and provides a space that allows them to separate work and home lives. Freelancers, coaches and consultants are among the people who use our space.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Work Central",
+    "address": "190 Clemenceau Avenue, Singapore",
+    "website": "http://www.workcentral.com.sg/",
+    "description": "At Work Central, we are obsessed about creating fun yet functional works places for entrepreneurs and small business owners. We create thriving communities and ecosystems comprising of -people solving problems and driving profits. Our goal is to help you do your best work possible everyday. We want you to focus on what’s important to your business, and leave the rest to us. We know that reliable and fast internet, meeting rooms and coffee are mainstays of any good workspace, but that is just the beginning. We’ve lined up a selection of helpful service providers and business partners, and will continue to bring in more useful and relevant resources to support your work and business needs.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  },
+  {
+    "name": "Workhouse",
+    "address": "60 Upper Weld Road\nSingapore 207413",
+    "website": "http://www.ourworkhouse.com/",
+    "description": "Workhouse Co-Working Space presents a unique space for entrepreneurs, start-ups and SMEs to come together in a single venue to inject creativity and change into today's world and society. Featuring a flexible and modular design and facilities fully customizable to your needs, leave your burdens behind and focus on what you do best: making an impact with your startup team, associates and friends.",
+    "logo": "",
+    "type": "",
+    "image": ""
+  }
+]
   },
   { // INCUBATORS-ACCELERATORS
     'model': 'Incubator_Accelerator',
