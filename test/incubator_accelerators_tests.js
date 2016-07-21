@@ -70,7 +70,7 @@ describe('POST /incubator-accelerators', function () {
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
-      expect(response.body[response.body.length - 1].name).to.equal('3 VS 1')
+      expect(response.body[response.body.length - 1].name).to.equal('3VS1')
       done()
     })
   })

@@ -12,8 +12,9 @@ function getCoSpace (req, res) {
 
   CoSpace.findById({_id: id}, function (err, cospace) {
     if (err) res.json({message: 'could not find cospace b/c: ' + err})
-
-    res.json({cospace: cospace})
+    let newObj = cospace
+    newObj.model = 'co-working-spaces'
+    res.json({cospace: newObj})
   })
 }
 // POST
