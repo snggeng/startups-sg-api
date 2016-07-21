@@ -64,11 +64,23 @@ var algoliasearch = require('algoliasearch')
 
 // init Algolia index
 var client = algoliasearch(process.env.ALGOLIA, process.env.ALGOLIA_API)
+console.log(process.env.ALGOLIA, process.env.ALGOLIA_API)
 var index = client.initIndex('startup_index')
 
-CoSpace.find((err, cospaces) => {
+CoSpace.find().lean().exec((err, cospaces) => {
   if (err) console.log(err)
-  index.addObjects(cospaces)
+  cospaces = cospaces.map(function (result) {
+    result.objectID = result._id
+    console.log(result)
+    return result
+  })
+  index.addObjects(cospaces, function (err) {
+    if (err) {
+      console.log(err)
+    }
+    console.log('MySQL<>Algolia import done')
+  }
+)
 })
 
 // init connection to MongoDB
