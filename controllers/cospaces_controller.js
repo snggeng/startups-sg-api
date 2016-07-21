@@ -54,10 +54,12 @@ function updateCoSpace (req, res) {
 // DELETE
 function destroyCoSpace (req, res) {
   let id = req.params.id
-
-  CoSpace.remove({_id: id}, (err) => {
-    if (err) return res.json({message: 'could not delete post b/c: ' + err})
-    res.json({message: 'cospace successfully deleted'})
+  CoSpace.findById({_id: id}, (err, cospace) => {
+    if (err) return res.json({message: 'could not find post b/c: ' + err})
+    cospace.remove((err) => {
+      if (err) return res.json({message: 'could not delete post b/c: ' + err})
+      res.json({message: 'cospace successfully deleted'})
+    })
   })
 }
 
