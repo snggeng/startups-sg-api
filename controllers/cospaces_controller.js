@@ -14,6 +14,7 @@ function getCoSpace (req, res) {
     if (err) res.json({message: 'could not find cospace b/c: ' + err})
     let newObj = cospace
     newObj.model = 'co-working-spaces'
+    console.log(newObj)
     res.json({cospace: newObj})
   })
 }

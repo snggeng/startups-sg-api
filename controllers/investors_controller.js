@@ -12,8 +12,9 @@ function getInvestor (req, res) {
 
   Investor.findById({_id: id}, function (err, investor) {
     if (err) res.json({message: 'could not find investor b/c: ' + err})
-
-    res.json({investor: investor})
+    let newObj = investor
+    newObj.model = 'incubator-accelerators'
+    res.json({investor: newObj})
   })
 }
 // POST

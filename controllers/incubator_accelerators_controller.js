@@ -12,8 +12,9 @@ function getIncubator_Accelerator (req, res) {
 
   Incubator_Accelerator.findById({_id: id}, function (err, incubator_accelerator) {
     if (err) res.json({message: 'could not find incubator_accelerator b/c: ' + err})
-
-    res.json({incubator_accelerator: incubator_accelerator})
+    let newObj = incubator_accelerator
+    newObj.model = 'incubator-accelerators'
+    res.json({incubator_accelerator: newObj})
   })
 }
 // POST

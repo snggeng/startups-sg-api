@@ -14,7 +14,6 @@ function getGovernment_Program (req, res) {
     if (err) res.json({message: 'could not find government_program b/c: ' + err})
     let newObj = government_program
     newObj.model = 'government_program'
-    // res.json({government_program: government_program})
     res.json({government_program: newObj})
   })
 }
