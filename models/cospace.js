@@ -17,7 +17,7 @@ const CoSpaceSchema = mongoose.Schema({
 CoSpaceSchema.post('save', function (next) {
   const cospaces = [this.toObject()]
   cospaces[0].objectID = cospaces[0]._id
-  console.log(cospaces)
+  cospaces[0].model = 'co-working-spaces'
   index.addObjects(cospaces, function (err) {
     if (err) {
       console.log(err)
