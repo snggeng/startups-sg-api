@@ -48,7 +48,7 @@ describe('GET /events', function () {
       .set('Accept', 'application/json')
       .end((error, response) => {
         expect(error).to.be.a('null')
-        expect(response.body).to.have.lengthOf(10)
+        expect(response.body).to.have.lengthOf(74)
         done()
       })
   })
@@ -70,7 +70,7 @@ describe('POST /events', function () {
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
-      expect(response.body[response.body.length - 1].name).to.equal('Internet of Things Hackathon 2015')
+      expect(response.body[response.body.length - 1].name).to.equal('YouthHack')
       done()
     })
   })
