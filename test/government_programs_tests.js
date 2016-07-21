@@ -48,7 +48,7 @@ describe('GET /government-programs', function () {
       .set('Accept', 'application/json')
       .end((error, response) => {
         expect(error).to.be.a('null')
-        expect(response.body).to.have.lengthOf(5)
+        expect(response.body).to.have.lengthOf(9)
         done()
       })
   })
@@ -70,7 +70,7 @@ describe('POST /government-programs', function () {
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
-      expect(response.body[response.body.length - 1].name).to.equal('Spring Singapore')
+      expect(response.body[response.body.length - 1].name).to.equal('WDA')
       done()
     })
   })

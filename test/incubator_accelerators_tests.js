@@ -48,7 +48,7 @@ describe('GET /incubator-accelerators', function () {
       .set('Accept', 'application/json')
       .end((error, response) => {
         expect(error).to.be.a('null')
-        expect(response.body).to.have.lengthOf(6)
+        expect(response.body).to.have.lengthOf(49)
         done()
       })
   })
@@ -70,7 +70,7 @@ describe('POST /incubator-accelerators', function () {
     .set('Accept', 'application/json')
     .end((error, response) => {
       expect(error).to.be.a('null')
-      expect(response.body[response.body.length - 1].name).to.equal('3VS1')
+      expect(response.body[response.body.length - 1].name).to.equal('Venturecraft')
       done()
     })
   })
