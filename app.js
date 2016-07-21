@@ -8,6 +8,10 @@ const mongoose = require('mongoose')
 const router = require('./config/routes')
 const bodyParser = require('body-parser')
 const CoSpace = require('./models/cospace.js')
+const Gov = require('./models/government_program.js')
+const Inc = require('./models/incubator_accelerator.js')
+const Investor = require('./models/investor.js')
+const algoliasearch = require('algoliasearch')
 
 // MIDDLEWARE
 // plugin morgan for debugging information
@@ -58,10 +62,6 @@ app.listen(process.env.PORT, () => {
 // CONNECT TO DB
 mongoose.connect(process.env.MONGODB_URI)
 
-// var Db = require('mongodb').Db
-// var Server = require('mongodb').Server
-var algoliasearch = require('algoliasearch')
-
 // init Algolia index
 var client = algoliasearch(process.env.ALGOLIA, process.env.ALGOLIA_API)
 var index = client.initIndex('startup_index')
@@ -77,31 +77,55 @@ CoSpace.find().lean().exec((err, cospaces) => {
     if (err) {
       console.log(err)
     }
-    console.log('MySQL<>Algolia import done')
+    console.log('Algolia import done')
   }
 )
 })
 
-// init connection to MongoDB
-// var db = new Db('startups-api', new Server(process.env.MONGODB_URI, 27017))
-// db.open(function (err, db) {
-//   if (err) console.log(err)
-//   // get the collection
-//   db.collection('cospaces', function (err, collection) {
-//     if (err) console.log(err)
-//     // iterate over the whole collection using a cursor
-//     var batch = []
-//     collection.find().forEach(function (doc) {
-//       batch.push(doc)
-//       if (batch.length > 10000) {
-//         // send documents by batch of 10000 to Algolia
-//         index.addObjects(batch)
-//         batch = []
-//       }
-//     })
-//     // last batch
-//     if (batch.length > 0) {
-//       index.addObjects(batch)
-//     }
-//   })
-// })
+Gov.find().lean().exec((err, govs) => {
+  if (err) console.log(err)
+  govs = govs.map(function (result) {
+    result.model = 'government-programs'
+    result.objectID = result._id
+    return result
+  })
+  index.addObjects(govs, function (err) {
+    if (err) {
+      console.log(err)
+    }
+    console.log('Algolia import done')
+  }
+)
+})
+
+Inc.find().lean().exec((err, incs) => {
+  if (err) console.log(err)
+  incs = incs.map(function (result) {
+    result.model = 'incubator-accelerators'
+    result.objectID = result._id
+    return result
+  })
+  index.addObjects(incs, function (err) {
+    if (err) {
+      console.log(err)
+    }
+    console.log('Algolia import done')
+  }
+)
+})
+
+Investor.find().lean().exec((err, investors) => {
+  if (err) console.log(err)
+  investors = investors.map(function (result) {
+    result.model = 'investors'
+    result.objectID = result._id
+    return result
+  })
+  index.addObjects(investors, function (err) {
+    if (err) {
+      console.log(err)
+    }
+    console.log('Algolia import done')
+  }
+)
+})
