@@ -12,8 +12,10 @@ function getGovernment_Program (req, res) {
 
   Government_Program.findById({_id: id}, function (err, government_program) {
     if (err) res.json({message: 'could not find government_program b/c: ' + err})
-
-    res.json({government_program: government_program})
+    let newObj = government_program
+    newObj.model = 'government_program'
+    // res.json({government_program: government_program})
+    res.json(newObj)
   })
 }
 // POST
