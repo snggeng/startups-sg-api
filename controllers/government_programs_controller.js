@@ -15,7 +15,7 @@ function getGovernment_Program (req, res) {
     let newObj = government_program
     newObj.model = 'government_program'
     // res.json({government_program: government_program})
-    res.json(newObj)
+    res.json({government_program: newObj})
   })
 }
 // POST
