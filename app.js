@@ -1,3 +1,4 @@
+/* globals alert*/
 // load in the environment vars
 require('dotenv').config({silent: true})
 
@@ -56,3 +57,35 @@ app.listen(process.env.PORT, () => {
 
 // CONNECT TO DB
 mongoose.connect(process.env.MONGODB_URI)
+
+var Db = require('mongodb').Db
+var Server = require('mongodb').Server
+var algoliasearch = require('algoliasearch')
+
+// init Algolia index
+var client = algoliasearch(process.env.ALGOLIA, process.env.ALGOLIA_API)
+var index = client.initIndex('startup_index')
+
+// init connection to MongoDB
+var db = new Db('startups-api', new Server('process.env.MONGODB_URI', 27017))
+db.open(function (err, db) {
+  if (err) alert('error')
+  // get the collection
+  db.collection('cospaces', function (err, collection) {
+    if (err) alert('error')
+    // iterate over the whole collection using a cursor
+    var batch = []
+    collection.find().forEach(function (doc) {
+      batch.push(doc)
+      if (batch.length > 10000) {
+        // send documents by batch of 10000 to Algolia
+        index.addObjects(batch)
+        batch = []
+      }
+    })
+    // last batch
+    if (batch.length > 0) {
+      index.addObjects(batch)
+    }
+  })
+})
